@@ -8,21 +8,21 @@ python3 cli.py \
   --output_dir experiments/[TASK_NAME]/gpt2/supervised \
   --do_train \
   --do_test \
+  --do_eval \
   --pet_per_gpu_eval_batch_size 8 \
   --pet_per_gpu_train_batch_size 8 \
   --pet_gradient_accumulation_steps 8 \
   --pet_num_train_epochs 10 \
-
   --pet_max_seq_length 256 \
   --pet_repetitions 1 \
+  --train_examples 50 100 250 500 1000 \
+  --test_examples 1000 \
+  --logging_steps 100 \
+  --overwrite_output_dir \
+  --no_distillation \
   --sc_per_gpu_train_batch_size 8 \
   --sc_per_gpu_unlabeled_batch_size 8 \
   --sc_gradient_accumulation_steps 8 \
   --sc_num_train_epochs 10 \
-
   --sc_max_seq_length 256 \
   --sc_repetitions 1 \
-  --train_examples 100 500 1000 5000 10000\
-  --logging_steps 10 \
-  --overwrite_output_dir \
-  --no_distillation
