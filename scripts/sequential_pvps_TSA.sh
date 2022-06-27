@@ -9,25 +9,23 @@ python3 cli.py \
   --do_train \
   --do_eval \
   --do_test \
-  --pet_per_gpu_eval_batch_size 1 \
-  --pet_per_gpu_train_batch_size 1 \
+  --pet_per_gpu_eval_batch_size 4 \
+  --pet_per_gpu_train_batch_size 4 \
   --pet_gradient_accumulation_steps 4 \
   --pet_num_train_epochs 10 \
   --pet_min_steps 1 \
   --pet_max_steps 2000 \
   --pet_max_seq_length 256 \
   --pet_repetitions 1 \
-  --sc_per_gpu_train_batch_size 1 \
-  --sc_per_gpu_unlabeled_batch_size 1 \
+  --sc_per_gpu_train_batch_size 4 \
+  --sc_per_gpu_unlabeled_batch_size 4 \
   --sc_gradient_accumulation_steps 4 \
   --sc_num_train_epochs 10 \
   --sc_min_steps 1 \
   --sc_max_steps 2000 \
   --sc_max_seq_length 256 \
   --sc_repetitions 1 \
-  --train_examples 4\
-  --test_examples 4\
-  --warmup_steps 1 \
-  --logging_steps 2 \
+  --train_examples 100 500 1000 5000 10000\
+  --logging_steps 10 \
   --overwrite_output_dir \
   --no_distillation

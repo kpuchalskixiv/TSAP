@@ -30,7 +30,7 @@ from pet.tasks import PROCESSORS, load_examples, UNLABELED_SET, TRAIN_SET, DEV_S
 from pet.utils import eq_div
 from pet.wrapper import SEQUENCE_CLASSIFIER_WRAPPER, WrapperConfig
 
-#logger = log.get_logger("root")
+logger = log.get_logger("root")
 #webhook_url = open("slack_webhook.txt").read()
 
 
@@ -147,7 +147,7 @@ def load_ipet_config(args) -> pet.IPetConfig:
 #@slack_sender(webhook_url=webhook_url, channel="Teven")
 def main():
     args = parser.parse_args()
-    #logger.info("Parameters: {}".format(args))
+    logger.info("Parameters: {}".format(args))
 
     # Setup CUDA, GPU & distributed training
     if args.local_rank != -1:
