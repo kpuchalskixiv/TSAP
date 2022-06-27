@@ -1,0 +1,33 @@
+python3 cli.py \
+  --method pet \
+  --pattern_ids 0 \
+  --data_dir split_data/ \
+  --model_type gpt2 \
+  --model_name_or_path gpt2 \
+  --task_name tsa \
+  --output_dir experiments/[TASK_NAME]/gpt2/supervised \
+  --do_train \
+  --do_eval \
+  --do_test \
+  --pet_per_gpu_eval_batch_size 1 \
+  --pet_per_gpu_train_batch_size 1 \
+  --pet_gradient_accumulation_steps 4 \
+  --pet_num_train_epochs 10 \
+  --pet_min_steps 1 \
+  --pet_max_steps 2000 \
+  --pet_max_seq_length 256 \
+  --pet_repetitions 1 \
+  --sc_per_gpu_train_batch_size 1 \
+  --sc_per_gpu_unlabeled_batch_size 1 \
+  --sc_gradient_accumulation_steps 4 \
+  --sc_num_train_epochs 10 \
+  --sc_min_steps 1 \
+  --sc_max_steps 2000 \
+  --sc_max_seq_length 256 \
+  --sc_repetitions 1 \
+  --train_examples 4\
+  --test_examples 4\
+  --warmup_steps 1 \
+  --logging_steps 2 \
+  --overwrite_output_dir \
+  --no_distillation

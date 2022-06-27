@@ -576,6 +576,14 @@ class RecordPVP(PVP):
     def verbalize(self, label) -> List[str]:
         return []
 
+class TSA(PVP):
+    VERBALIZER = {"0": ["Positive"], "1": ["Negative"]}
+
+    def get_parts(self, example: InputExample) -> FilledPattern:
+        text_a = self.shortenable(example.text_a)
+        return ['Consider the message: "', text_a, '" Is its sentiment positive? ', self.mask], []
+    def verbalize(self, label) -> List[str]:
+       return TSA.VERBALIZER[label]
 
 PVPS = {
     "agnews": AgnewsPVP,
@@ -596,4 +604,5 @@ PVPS = {
     "record": RecordPVP,
     "ax-b": RtePVP,
     "ax-g": RtePVP,
+    "tsa": TSA,
 }
