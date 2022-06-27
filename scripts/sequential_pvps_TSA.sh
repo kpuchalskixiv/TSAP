@@ -15,7 +15,7 @@ python3 cli.py \
   --pet_num_train_epochs 10 \
   --pet_max_seq_length 256 \
   --pet_repetitions 1 \
-  --train_examples 50 100 250 500 1000 \
+  --train_examples 30000 80000 149000\
   --test_examples 1000 \
   --logging_steps 100 \
   --overwrite_output_dir \
