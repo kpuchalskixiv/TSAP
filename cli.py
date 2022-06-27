@@ -293,7 +293,7 @@ def main():
 
         if final_results is not None and args.local_rank in [-1, 0]:
             if not wandb_initalized:
-                wandb.init(project=f"pvp-vs-finetuning-{args.task_name}", name=naming_convention(args))
+                wandb.init("Prompted Twitter Sentiment Analysis", entity="pns", name=naming_convention(args))
                 wandb_initalized = True
             final_results["training_points"] = n_train_examples
             wandb.log(final_results)
