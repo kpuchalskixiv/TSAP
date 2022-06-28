@@ -54,6 +54,7 @@ from transformers import (
     GPT2Config,
     GPT2LMHeadModel,
     GPT2Tokenizer,
+    GPT2ForSequenceClassification,
 )
 from transformers import __version__ as transformers_version
 from transformers.data.metrics import simple_accuracy
@@ -109,7 +110,11 @@ MODEL_CLASSES = {
         SEQUENCE_CLASSIFIER_WRAPPER: AlbertForSequenceClassification,
         MLM_WRAPPER: AlbertForMaskedLM,
     },
-    "gpt2": {"config": GPT2Config, "tokenizer": GPT2Tokenizer, MLM_WRAPPER: GPT2LMHeadModel},
+    "gpt2": {
+        "config": GPT2Config, "tokenizer": GPT2Tokenizer, 
+        SEQUENCE_CLASSIFIER_WRAPPER: GPT2ForSequenceClassification,
+        MLM_WRAPPER: GPT2LMHeadModel
+    },
 }
 
 EVALUATION_STEP_FUNCTIONS = {
